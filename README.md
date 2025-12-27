@@ -1,9 +1,9 @@
-# cookinbizfullplatform
+# CookinTraining web app
 
 *Automatically synced with your [v0.app](https://v0.app) deployments*
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/saint-vision-ai-cookin-knowledge/v0-cookinbizfullplatform-1z)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/eWNwyp0ON6r)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/saint-vision-ai-cookin-knowledge/v0-cookin-training-web-app)
+[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/oAUAqOQDuql)
 
 ## Overview
 
@@ -14,13 +14,13 @@ Any changes you make to your deployed app will be automatically pushed to this r
 
 Your project is live at:
 
-**[https://vercel.com/saint-vision-ai-cookin-knowledge/v0-cookinbizfullplatform-1z](https://vercel.com/saint-vision-ai-cookin-knowledge/v0-cookinbizfullplatform-1z)**
+**[https://vercel.com/saint-vision-ai-cookin-knowledge/v0-cookin-training-web-app](https://vercel.com/saint-vision-ai-cookin-knowledge/v0-cookin-training-web-app)**
 
 ## Build your app
 
 Continue building your app on:
 
-**[https://v0.app/chat/eWNwyp0ON6r](https://v0.app/chat/eWNwyp0ON6r)**
+**[https://v0.app/chat/oAUAqOQDuql](https://v0.app/chat/oAUAqOQDuql)**
 
 ## How It Works
 

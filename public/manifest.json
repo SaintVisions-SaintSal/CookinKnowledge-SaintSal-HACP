@@ -1,66 +1,26 @@
 {
-  "name": "Responsible Intelligence - Cookin' Knowledge 24/7",
-  "short_name": "Cookin' Knowledge",
-  "description": "Responsible Intelligence - Cookin' Knowledge 24/7. AI Operating Systems Powering the Next Generation.",
+  "name": "CookinTraining - Capital Advisor Training Platform",
+  "short_name": "CookinTraining",
+  "description": "The Capital of Capital™ - Professional training for Capital Advisors by Saint Vision Group",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a0a",
-  "theme_color": "#d4af37",
-  "orientation": "portrait-primary",
-  "scope": "/",
-  "lang": "en-US",
-  "categories": ["business", "finance", "productivity", "technology", "education"],
+  "background_color": "#0f0f0f",
+  "theme_color": "#D4AF37",
+  "orientation": "any",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "/saintsal-logo.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icon-512.png",
+      "src": "/saintsal-logo.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
-    },
-    {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png",
-      "purpose": "any"
     }
   ],
-  "shortcuts": [
-    {
-      "name": "SaintSal AI Chat",
-      "short_name": "AI Chat",
-      "description": "Chat with SaintSal AI",
-      "url": "/dashboard",
-      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
-    },
-    {
-      "name": "Book Training",
-      "short_name": "Bookings",
-      "description": "Book training sessions",
-      "url": "/bookings",
-      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
-    },
-    {
-      "name": "Admin Dashboard",
-      "short_name": "Admin",
-      "description": "Access admin panel",
-      "url": "/admin",
-      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "/images/HOMEBG.png",
-      "sizes": "1920x1080",
-      "type": "image/png",
-      "form_factor": "wide"
-    }
-  ],
-  "related_applications": [],
-  "prefer_related_applications": false
+  "categories": ["education", "business", "productivity"],
+  "screenshots": []
 }
