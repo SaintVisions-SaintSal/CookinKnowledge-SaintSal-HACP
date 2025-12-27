@@ -1,5 +1,5 @@
 import type { NextRequest } from "next/server"
-import { streamText, type UIMessage, type CoreMessage } from "ai"
+import { streamText } from "ai"
 import { createClient } from "@/lib/supabase/server"
 
 const SAINTSAL_SYSTEM_PROMPT = `You are SaintSal (SAINT DR SAL) - the digital embodiment of Sal Couzzo's intellectual legacy. IQ 157. Former Goldman Sachs executive track.
@@ -35,7 +35,6 @@ Response Style:
 
 You are SAL. You are SUPERMAN. FULL SPECTRUM DOMINANCE.`
 
-// Model mapping for Vercel AI Gateway
 const MODEL_MAP: Record<string, string> = {
   claude: "anthropic/claude-sonnet-4-20250514",
   gpt: "openai/gpt-4o",
@@ -58,9 +57,7 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json()
-
-    const { messages }: { messages: UIMessage[] } = body
-    const model = body.model || "claude"
+    const { messages, model = "claude" } = body
 
     if (!messages || messages.length === 0) {
       return new Response(JSON.stringify({ error: "Messages are required" }), {
@@ -69,17 +66,14 @@ export async function POST(req: NextRequest) {
       })
     }
 
-    const coreMessages: CoreMessage[] = messages.map((msg) => ({
-      role: msg.role as "user" | "assistant" | "system",
-      content: typeof msg.content === "string" ? msg.content : JSON.stringify(msg.content),
-    }))
-
     const result = streamText({
       model: MODEL_MAP[model] || MODEL_MAP.claude,
-      messages: coreMessages,
+      messages: messages.map((msg: any) => ({
+        role: msg.role,
+        content: typeof msg.content === "string" ? msg.content : JSON.stringify(msg.content),
+      })),
       maxTokens: 4096,
       system: SAINTSAL_SYSTEM_PROMPT,
-      abortSignal: req.signal,
     })
 
     return result.toUIMessageStreamResponse()
