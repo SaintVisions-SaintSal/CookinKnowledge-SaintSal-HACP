@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 45 56% 52%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 50%;
+    --accent: 45 56% 52%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 45 56% 52%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-void text-white font-body antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 3px;
+}
+
+/* Selection */
+::selection {
+  background: #d4af37;
+  color: #0a0a0a;
+}
+
+/* Custom Classes */
+@layer components {
+  .text-gold-gradient {
+    @apply bg-gradient-to-r from-gold via-gold-bright to-gold-light bg-clip-text text-transparent;
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4), 0 0 60px rgba(212, 175, 55, 0.2);
+  }
+
+  .glow-gold-intense {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6), 0 0 40px rgba(212, 175, 55, 0.4), 0 0 80px rgba(212, 175, 55, 0.2);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.8), 0 0 20px rgba(212, 175, 55, 0.4);
+  }
+
+  .glass {
+    @apply bg-black/80 backdrop-blur-xl border border-white/5;
+  }
+
+  .btn-gold {
+    @apply bg-gradient-to-r from-gold to-gold-bright text-void font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-glow-gold hover:-translate-y-0.5;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent border border-white/30 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:border-gold hover:text-gold hover:bg-gold/10;
+  }
+
+  .btn-secondary {
+    @apply bg-white/5 border border-white/20 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:border-white/40 hover:bg-white/10;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border-2 border-gold text-gold px-6 py-3 rounded-lg transition-all duration-300 hover:bg-gold hover:text-void;
+  }
+
+  .card-elevated {
+    @apply bg-card border border-white/10 rounded-xl transition-all duration-300 hover:border-gold/30 hover:shadow-glow-gold;
+  }
+
+  .input-dark {
+    @apply w-full bg-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all duration-300;
+  }
+
+  .label-gold {
+    @apply text-xs text-gold uppercase tracking-wider font-medium;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Grid Pattern Background */
+.bg-grid {
+  background-image: linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Noise Texture */
+.bg-noise {
+  position: relative;
+}
+.bg-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* RSS.app Carousel Widget Styling */
+.rss-carousel-container {
+  min-height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.rss-carousel-container rss-app-carousel,
+.rss-carousel-container rssapp-carousel {
+  --rss-carousel-bg: transparent !important;
+  --rss-card-bg: rgba(255, 255, 255, 0.05) !important;
+  --rss-card-border: rgba(212, 175, 55, 0.2) !important;
+  --rss-title-color: #ffffff !important;
+  --rss-description-color: rgba(255, 255, 255, 0.7) !important;
+  --rss-date-color: #d4af37 !important;
+  --rss-link-color: #d4af37 !important;
+}
+
+/* 365Scores Widget Styling */
+.sports-widget-container {
+  min-height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.sports-widget-container [data-widget-type="entityScores"] {
+  background: transparent !important;
+  border-radius: 12px;
+}
+
+/* Override 365Scores dark theme to match our gold accent */
+.sports-widget-container .score-widget,
+.sports-widget-container .widget-container {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(212, 175, 55, 0.1) !important;
+  border-radius: 8px !important;
+}
+
+.sports-widget-container .match-score {
+  color: #d4af37 !important;
+}
+
+.sports-widget-container .team-name {
+  color: #ffffff !important;
+}
+
+.sports-widget-container .match-time,
+.sports-widget-container .match-date {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Hide powered by from external widgets if needed */
+.sports-widget-container #powered-by {
+  display: none !important;
+}
+
+/* Smooth transitions for tab switching */
+.sports-widget-container > div {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments for widgets */
+@media (max-width: 768px) {
+  .rss-carousel-container {
+    min-height: 250px;
+  }
+
+  .sports-widget-container {
+    min-height: 300px;
+  }
+}
